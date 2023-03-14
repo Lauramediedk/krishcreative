@@ -1,0 +1,875 @@
+/*Hjælp til at implementere nye fonts fra youtube linket https://www.youtube.com/watch?v=Hwq_Mr12bcI*/
+@font-face{
+  src: url(fonts/Didot\ Regular.ttf); 
+  font-family: didot;
+}
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: didot;
+}
+/*Root og var() lavet med hjælp fra W3schools https://www.w3schools.com/css/css3_variables.asp*/
+:root{
+    --dark: #a2a9a6;
+    --hover: #c1978f;
+    --pink: #d4a59d;
+    --darkbeige: #d6ccc5;
+    --beige: #ede6e2;
+    --white: #f5f5f5;
+    --gold: #D4AF37;
+    --silver: #C0C0C0;
+    --bronze: #9F7A34;
+}
+/*Alt styles til mobile first og derefter desktop*/
+.navbar{
+    overflow: hidden;
+    background-color: var(--beige);
+    padding: 20px 10px;
+}
+.navbar a{
+    float: none;
+    display: block;
+    text-align: left;
+    color: rgb(07, 07, 07);
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    background-color: var(--beige);
+}
+.navbar a.logo{
+    font-size: 25px;
+    font-weight: bold;
+}
+.navbar a:hover{
+    background-color: var(--darkbeige);
+    color: rgb(07, 07, 07);
+}
+.navbar a:active{
+    background-color: var(--darkbeige);
+    color: var(--dark);
+}
+.links{
+    float: none;
+}
+.navguide{
+    text-align: center;
+    padding: 1em;
+    background-color: var(--darkbeige);
+}
+.navguide a{
+    text-decoration: none;
+    background-color: var(--darkbeige);
+    color: rgb(07, 07, 07);
+}
+.navguide a:hover{
+    color: var(--dark);
+}
+/* Forside billedet styles her*/
+.bigimage img{
+    max-width: 100%;
+}
+.desktop-picture{
+    display: none;
+}
+/* Tekst under billedet styles her*/
+.bigimage h1{
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1.2em;
+    font-family: didot;
+}
+.bigimage h3{
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1.2em;
+    color: var(--dark);
+    font-style: italic;
+}
+.bigimage p{
+    text-align: center;
+    margin-top: 1em;
+}
+/* Vandret linje som lukker første sektion styles her */
+.bigimage hr{
+    color: rgb(7, 7, 7);
+    margin-top: 1rem;
+    margin-bottom: 2em;
+}
+/*Her styles de tre sektioner til forsiden*/
+/*Først bliver de sat op i et grid*/
+.three-sections{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    "work"
+    "worktxt"
+    "work-a"
+    "book"
+    "booktxt"
+    "book-a"
+    "team"
+    "teamtxt"
+    "team-a"; 
+}
+/*Herefter bliver de stylet hver især og tildelt område*/
+.work{
+    grid-area: work;
+}
+.work img{
+    max-width: 100%;
+    margin-top: 1rem;
+}
+.worktxt{
+    grid-area: worktxt;
+    text-align: center;
+}
+.worktxt h3{
+    margin-bottom: 1em;
+}
+.work-a{
+    grid-area: work-a;
+    text-align: center;
+    margin-top: 1rem;
+}
+/*Linket styles individuelt til hver sektion*/
+.work-a a{
+    text-decoration: none;
+    padding: 0.3em 2.5em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+}
+.work-a a:hover{
+    background-color: var(--hover);
+}
+.book{
+    grid-area: book;
+}
+.book img{
+    max-width: 100%;
+    margin-top: 1rem;
+}
+.booktxt{
+    grid-area: booktxt;
+    text-align: center;
+}
+.booktxt h3{
+    margin-bottom: 1em;
+}
+.book-a{
+    grid-area: book-a;
+    text-align: center;
+    margin-top: 1rem;
+}
+.book-a a{
+    text-decoration: none;
+    padding: 0.3em 2.5em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+}
+.book-a a:hover{
+    background-color: var(--hover);
+}
+.team{
+    grid-area: team;
+}
+.team img{
+    max-width: 100%;
+    margin-top: 1rem;
+}
+.teamtxt{
+    grid-area: teamtxt;
+    text-align: center;
+}
+.teamtxt h3{
+    margin-bottom: 1em;
+}
+.team-a{
+    grid-area: team-a;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.team-a a{
+    text-decoration: none;
+    padding: 0.3em 2.5em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+}
+.team-a a:hover{
+    background-color: var(--hover);
+}
+/*Styling af howto sektionen*/
+.howto h1{
+    background-color: var(--beige);
+    text-align: center;
+    padding: 1rem;
+}
+.howto h3{
+    background-color: var(--beige);
+    text-align: center;
+    font-family: helvetica;
+    font-weight:300;
+}
+.howto p{
+    background-color: var(--beige);
+    text-align: center;
+    padding: 1rem;
+}
+/*Her styles galleriet på forsiden*/
+.gallery-titel{
+    text-align: center;
+    padding: 1.8em;
+    font-size: 1em;
+    font-family: didot;
+    text-transform: uppercase;
+}
+/* Her starter styling af grid*/
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    "firstimg secondimg"
+    "firstimg thirdimg";
+}
+.firstimg{
+    grid-area: firstimg;
+}
+.firstimg img{
+    max-width: 100%;
+}
+.secondimg{
+    grid-area: secondimg;
+}
+.secondimg img{
+    max-width: 100%;
+}
+.thirdimg{
+    grid-area: thirdimg;
+}
+.thirdimg img{
+    max-width: 100%;
+}
+.bw-first img{
+    display: none;
+}
+.bw-second img{
+    display: none;
+}
+/*Styling af review sektionen*/
+.review{
+    text-align: center;
+    background-color: var(--beige);
+    padding: 1.5rem;
+}
+.review h3{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: var(--beige);
+}
+.review p{
+    font-style: italic;
+    margin-bottom: 1em;
+    background-color: var(--beige);
+}
+.review h4{
+    background-color: var(--beige);
+    margin-bottom: 1em;
+}
+/*Styling af footer i grid*/
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "contact connect"
+    "text facebook"
+    "... instagram"
+    "... email"
+    "logo-footer logo-footer";
+}
+/*Her tildeles alle områder i footeren et område*/
+/*Baggrundsfarve er tilføjet til hvert element da hele sektionen dækkes på den måde*/
+.footer{
+    background-color: var(--darkbeige);
+}
+.contact{
+    grid-area: contact;
+    background-color: var(--darkbeige);
+}
+.contact h3{
+    text-align: center;
+    margin-top: 1.5em;
+    background-color: var(--darkbeige);
+}
+.text{
+    grid-area: text;
+    margin-top: 1em;
+    text-align: center;
+}
+.text p{
+    background-color: var(--darkbeige);
+}
+.connect{
+    grid-area: connect;
+    background-color: var(--darkbeige);
+}
+.connect h3{
+    text-align: center;
+    margin-top: 1.5em;
+    background-color: var(--darkbeige);
+}
+.facebook{
+    grid-area: facebook;
+    margin-top: 1em;
+    text-align: center;
+    background-color: var(--darkbeige);
+}
+/*Link styles her*/
+.facebook a{
+    text-decoration: none;
+    color: rgb(07, 07, 07);
+    background-color: var(--darkbeige);
+}
+.facebook a:hover{
+    color: var(--white);
+}
+.instagram{
+    grid-area: instagram;
+    text-align: center;
+    background-color: var(--darkbeige);
+}
+.instagram a{
+    text-decoration: none;
+    color: rgb(07, 07, 07);
+    background-color: var(--darkbeige);
+}
+.instagram a:hover{
+    color: var(--white);
+}
+.email{
+    grid-area: email;
+    text-align: center;
+    background-color: var(--darkbeige);
+}
+.email a{
+    text-decoration: none;
+    color: rgb(07, 07, 07);
+    background-color: var(--darkbeige);
+}
+.email a:hover{
+    color: var(--white);
+}
+/*Billede til footer styles her*/
+.logo-footer{
+    grid-area: logo-footer;
+    background-color: var(--darkbeige);
+}
+.logo-footer img{
+    max-width: 60%;
+    background-color: var(--darkbeige);
+}
+@media only screen and (min-width: 660px){  
+/*Her styles navbar til desktop*/
+.navbar a{
+float: left;
+}
+.links{
+    float: right;
+    margin-right: 2em;
+}
+.navguide{
+    height: 1.5rem;
+}
+.navguide a{
+    float: left;
+}
+/*Grid til forside billedet og tekst*/
+.bigimage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    "bigimage desktop-picture"
+    "bigimg-text bigimg-text";
+}
+.bigimage{
+    grid-area: bigimage;
+    padding: 1rem;
+}
+.desktop-picture{
+    display: block;
+    grid-area: desktop-picture;
+}
+.bigimg-text{
+    grid-area: bigimg-text;
+}
+/*Her styles de 3 sektioner til desktop*/
+.three-sections{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    "work book team"
+    "worktxt booktxt teamtxt"
+    "work-a book-a team-a"; 
+}
+/*Her styles howto sektionen i et grid*/
+.howto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    "firstguide secondguide thirdguide fourthguide";
+}
+/*Her styles galleriet*/
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "firstimg secondimg bw-first"
+    "firstimg thirdimg bw-second";
+}
+.firstimg img{
+    grid-area: firstimg;
+}
+.secondimg img{
+    grid-area: secondimg;
+}
+.thirdimg img{
+    grid-area: thirdimg;
+}
+.bw-first img {
+    grid-area: hidden-img;
+    max-width: 100%;
+    display: block;
+}
+.bw-second img {
+    grid-area: hidden-img;
+    max-width: 100%;
+    display: block;
+}
+/*Her tildeles områderne i grid*/
+.firstguide{
+    grid-area: firstguide;
+}
+.secondguide{
+    grid-area: secondguide;
+}
+.thirdguide{
+        grid-area: thirdguide;
+}
+.fourthguide{
+    grid-area: fourthguide;
+}
+.review{
+    margin-top: 1.5rem;
+    padding: 3rem;
+}
+/*Styling af footer desktop*/
+.contact h3{
+    margin-top: 3em;
+}
+.connect h3{
+    margin-top: 3em;
+}
+.logo-footer img{
+    max-width: 50%;
+}
+}
+/*Her starter vores styling af undersiden packages til mobile*/
+.packages {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "wedding"
+    "wedding-a"
+    "engagement"
+    "engagement-a"
+    "ceremony"
+    "ceremony-a"
+    "birthday"
+    "birthday-a"
+}
+/*Hvert område i grid tildeles deres plads*/
+.wedding{
+    grid-area: wedding;
+}
+.wedding-a{
+    text-align: center;
+    padding: 1.5rem;
+}
+.wedding-a a{
+    grid-area: wedding-a;
+    text-decoration: none;
+    padding: 0.3em 2.5em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+}
+.wedding-a a:hover{
+    background-color: var(--hover);
+}
+.wedding h3{
+    text-align: center;
+    padding: 1.5em;
+}
+.wedding img{
+    max-width: 100%;
+}
+.engagement{
+    grid-area: engagement;
+}
+.engagement h3{
+    text-align: center;
+    padding: 1.5em;
+}
+.engagement img{
+    max-width: 100%;
+}
+.engagement-a{
+    grid-area: engagement-a;
+    text-align: center;
+    padding: 1.5rem;
+}
+.engagement-a a{
+    grid-area: wedding-a;
+    text-decoration: none;
+    padding: 0.3em 2.5em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+}
+.engagement-a a:hover{
+    background-color: var(--hover);
+}
+.ceremony{
+    grid-area: ceremony;
+}
+.ceremony h3{
+    text-align: center;
+    padding: 1.5em;
+}
+.ceremony img{
+    max-width: 100%;
+}
+.ceremony-a{
+    grid-area: ceremony-a;
+    text-align: center;
+    padding: 1.5rem;
+}
+.ceremony-a a{
+    grid-area: wedding-a;
+    text-decoration: none;
+    padding: 0.3em 2.5em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+}
+.ceremony-a a:hover{
+    background-color: var(--hover);
+}
+.birthday{
+    grid-area: birthday;
+}
+.birthday h3{
+    text-align: center;
+    padding: 1.5em;
+}
+.birthday img{
+    max-width: 100%;
+}
+.birthday-a{
+    grid-area: birthday-a;
+    text-align: center;
+    padding: 1.5rem;
+}
+.birthday-a a{
+    grid-area: wedding-a;
+    text-decoration: none;
+    padding: 0.3em 2.5em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+}
+.birthday-a a:hover{
+    background-color: var(--hover);
+}
+/*Her styles packages undersiden til desktop i grid*/
+@media screen and (min-width: 660px){
+    .packages {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 1rem;
+        grid-template-areas: 
+        "wedding engagement ceremony birthday"
+        "wedding-a engagement-a ceremony-a birthday-a";
+    }
+}
+/*Her starter stylingen af prices undersiden, allerførst styling af overskriften*/
+.site-title{
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    font-size: 0.8em;
+}
+/*Her styles et grid til undersiden prices*/
+.prices {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "silver-package"
+    "silver-content"
+    "silver-price"
+    "silver-a"
+    "gold-package"
+    "gold-content"
+    "gold-price"
+    "gold-a"
+    "bronze-package"
+    "bronze-content"
+    "bronze-price"
+    "bronze-a";
+}
+/*Hvert element tildeles først en plads i grid og bliver derefter stylet*/
+.silver-package{
+    grid-area: silver-package;
+    padding: 1rem;
+    text-align: center;
+}
+.silver-content{
+    grid-area: silver-content;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: fit-content;
+    border-style: groove;
+    background-color: var(--beige);
+    border-radius: 10%;
+    border-width: medium;
+    border-color: var(--silver);
+}
+.silver-content h3{
+    background-color: var(--beige);
+    padding: 1em;
+}
+/*Hver li liste skal styles individuelt med tag list-style:none for at fjerne bullet points*/
+.silver-content li{
+    background-color: var(--beige);
+    list-style: none;
+}
+.silver-price{
+    grid-area: silver-price;
+    text-align: center;
+    margin-top: 1em;
+}
+/*Her styles knapperne*/
+.silver-a{
+    grid-area: silver-a;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+/*Her styles selve linket*/
+.silver-a a{
+    text-decoration: none;
+    padding: 0.3em 2.5em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+}
+/*Her styles hver knap til at skifte når bruger hover over*/
+.silver-a a:hover{
+    background-color: var(--hover);
+}
+.gold-package{
+    grid-area: gold-package;
+    padding: 1rem;
+    margin-top: 2em;
+    text-align: center;
+}
+/*Content og li har har begge fået en baggrundsfarve for at dække hele kassen*/
+.gold-content{
+    grid-area: gold-content;
+    padding: 1em;
+    max-width: fit-content;
+    border-style: groove;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--beige);
+    border-radius: 10%;
+    border-width: medium;
+    border-color: var(--gold);
+}
+.gold-content li{
+    list-style: none;
+    background-color: var(--beige);
+}
+.gold-content h3{
+    background-color: var(--beige);
+    padding: 1em;
+}
+.gold-price{
+    grid-area: gold-price;
+    text-align: center;
+    margin-top: 1em;
+}
+.gold-a{
+    grid-area: gold-a;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.gold-a a{
+    text-decoration: none;
+    padding: 0.3em 2.5em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+}
+.gold-a a:hover{
+    background-color: var(--hover);
+}
+.bronze-package{
+    grid-area: bronze-package;
+    padding: 1rem;
+    margin-top: 2em;
+    text-align: center;
+}
+.bronze-content{
+    grid-area: bronze-content;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: fit-content;
+    border-style: groove;
+    background-color: var(--beige);
+    border-radius: 10%;
+    border-width: medium;
+    border-color: var(--bronze);
+}
+.bronze-content h3{
+    background-color: var(--beige);
+    padding: 1em;
+}
+.bronze-content li{
+    list-style: none;
+    background-color: var(--beige);
+}
+.bronze-price{
+    grid-area: bronze-price;
+    text-align: center;
+    margin-top: 1em;
+}
+.bronze-a{
+    grid-area: bronze-a;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+.bronze-a a{
+    text-decoration: none;
+    padding: 0.3em 2.5em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-transform: uppercase;
+}
+.bronze-a a:hover{
+    background-color: var(--hover);
+}
+/*Her styles pris pakkerne til desktop*/
+@media only screen and (min-width: 660px){
+    .prices {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "silver-package gold-package bronze-package"
+        "silver-content gold-content bronze-content"
+        "silver-price gold-price bronze-price"
+        "silver-a gold-a bronze-a";
+    }
+    .site-title{
+        text-align: center;
+        margin-bottom: 2em;
+    }
+    .silver-package h3{
+        margin-top: 1.8em;
+    }
+}
+/*Her styles undersiden Gallery i et grid*/
+.image-gallery{
+    display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "gallery-txt"
+        "galleryfirst"
+        "gallerysecond"
+        "gallerythird"
+        "galleryfourth";
+}
+.image-gallery{
+    padding: 1.5rem;
+}
+/*Hvert område tildeles et område*/
+.gallery-txt{
+    grid-area: gallery-txt;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.galleryfirst{
+    grid-area: galleryfirst;
+}
+/*Hvert billede styles*/
+.galleryfirst img{
+    max-width: 100%;
+}
+.gallerysecond{
+    grid-area: gallerysecond;
+}
+.gallerysecond img{
+    max-width: 100%;
+}
+.gallerythird{
+    grid-area: gallerythird;
+}
+.gallerythird img{
+    max-width: 100%;
+}
+.galleryfourth{
+    grid-area: galleryfourth;
+}
+.galleryfourth img{
+    max-width: 100%;
+}
+/*Her styles grid til desktop*/
+@media only screen and (min-width: 660px){
+    .image-gallery{
+        display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            grid-gap: 1rem;
+            grid-template-areas: 
+            "gallery-txt gallery-txt"
+            "galleryfirst gallerysecond"
+            "gallerythird galleryfourth";
+    }
+    .gallery-txt{
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+}
